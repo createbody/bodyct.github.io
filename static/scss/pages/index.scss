@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+html,
+body {
+	position: relative;
+	height: 100%;
+}
+.wrap {
+	height: 100%;
+}
+// index
+.l-ctbody {
+	padding: 15px;
+	padding-bottom: 0;
+	margin: 0 auto;
+	color: #444;
+}
+.content {
+	position: relative;
+
+	&-item {
+		a {
+			display: block;
+
+			img {
+				width: 100%;
+			}
+		}		
+	}
+	&-item + &-item {
+		margin-top: 15px;
+	}
+	&-item + &-item:before {
+		content: "";
+		display: block;
+		max-width: 45%;
+		margin: 0 auto 15px;
+		border-top: 2px solid #444;
+	}
+
+	@media screen and (min-width: $l-mb) {
+		overflow: hidden;
+		margin-left: -15px;
+
+		&-item {
+			float: left;
+			width: 50%;
+
+			a {
+				padding: 15px 0 0 15px;
+			}
+		}
+		&-item + &-item {
+			margin-top: 0;				
+		}
+		&-item + &-item:before {
+			content: none;
+		}		
+	}
+}
+.call-btn {
+	margin-top: 15px;
+	padding: 5px 20px;
+	text-align: center;
+	background: #444;
+
+	a {
+		display: block;
+	}
+	@media screen and (min-width: $tablet) {
+		display: none;
+	}	
+}
+.sns {
+	@include clearfix;
+	margin: 30px 0;
+	padding: 15px 0;
+	color: $brand;
+	.h2 {
+		@include area-line();
+		font-size: 1.5em;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	&-item {
+		@include box-sizing(border-box);
+		float: left;
+		width: 25%;
+		padding: 10px;
+		text-align: center;
+	}
+	&-item-brands {
+		display: none;
+		margin-top: 15px;
+		font-size: 1.3em;
+	}
+	a {
+		display: inline-block;
+		
+		img {
+			max-width: 45px;
+		}
+	}
+	@media screen and (min-width: $tablet) {
+
+		.h2 {
+			font-size: 2.3em;
+		}
+		a {
+			padding-top: 20px; 
+
+			img {
+				max-width: 75px;
+			}			
+		}
+		&-item-brands {
+			display: block;
+		}		
+	}	
+}

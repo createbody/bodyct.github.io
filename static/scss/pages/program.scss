@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/*--------------------------------
+	program
+--------------------------------*/
+
+.program {
+	$radius-v: 15px;
+
+	.p {
+		@include radius($radius-v);
+		@include box-sizing(border-box);
+		padding: 15px;
+		font-size: 1.4em;
+		line-height: 1.7em;
+		text-align: center;
+		background: #efefef;
+	}
+
+	.content {
+		@include radius($radius-v);
+		padding: 20px;
+		border: 1px solid #ccc;
+		margin-left: 0;
+		color: #6c6c6c;
+		text-align: center;
+		
+		&:after {
+			content: none;
+		}
+		img {
+			max-width: 45%;
+			@include radius(5px);
+		}			
+		.h3 {
+			margin: 20px 0;
+			font-weight: bold;
+			font-size: 1.3em;
+		}		
+		.desc {
+			font-size: 1.2em;
+			line-height: 2em;
+			text-align: left;
+		}
+
+	}
+	.content-step + .content-step {
+		border-top: 1px dotted #ccc;
+
+		dt {
+			padding: 15px 0;
+		}
+	}	
+
+	@media screen and (min-width: $tablet) {
+		.p {
+			font-size: 1.5em;
+
+			span {
+				display: block;
+			}
+		}
+		.content {
+			border: none;
+			text-align: left;
+
+			&-step {
+				@include clearfix;
+				padding: 30px;
+			}
+			dt, 
+			dd {
+				display: inline-block;
+				float: left;
+			}
+			dt {
+				width: 25%;
+				text-align: center;
+
+				img {
+					max-width: none;
+					width: 100%;
+					vertical-align: middle;
+				}
+			}
+			dd {
+				@include box-sizing(border-box);
+				position: relative;
+				width: 75%;
+				padding-left: 50px;
+			}
+			.h3 {
+				margin-top: 0;
+				font-size: 1.6em;
+			}
+			.desc {
+				font-size: 1.5em;
+			}
+		}
+		.content-step + .content-step {
+
+			dt {
+				padding: 0;
+			}
+		}		
+	}	
+}

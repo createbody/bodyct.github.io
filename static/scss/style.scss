@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@import 'utils/mq';
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/style';
+
+@import 'slick/slick';
+@import 'slick/slick-theme';
+
+@import 'vendors/normalize';
+
+@import 'base/reset';
+
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'pages/index';
+@import 'pages/before_after';
+@import 'pages/program';
+//pages css
+

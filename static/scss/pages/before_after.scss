@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+.board {
+	overflow: hidden;
+	position: relative;
+	padding: 25px 10px;
+
+	//댓글
+	&-list {
+		position: relative;
+		width: 100%;
+		text-align: left;
+		letter-spacing: -.05em;
+
+		& + & {
+			margin-top: 40px;
+		}
+
+		@media screen and (min-width: $tablet) {
+			float: left;
+			width: 50%;
+			margin-right: 50%;
+		}
+	}
+
+	&-list.list-right {
+		@media screen and (min-width: $tablet) {
+			margin-left: 50%;
+		}
+	}
+
+	&-list-cell {
+		@include radius(10px);
+		@include box-sizing(border-box);
+		padding: 15px;
+		font-size: 15px;
+		background: #fff;
+		box-shadow: 0 2px 2px #c1baae;
+		background: url('../images/b_after/pattern.jpg') repeat;
+		
+		@media screen and (min-width: $tablet) {
+			// text-align: left;
+			padding: 30px;
+			margin-right: 70px;
+		}
+	}
+	&-list.list-right &-list-cell {
+
+		@media screen and (min-width: $tablet) {
+			margin: 0 0 0 70px;
+		}
+	}
+
+	.writer {
+		display: block;
+		margin: 20px 0 15px;
+		padding-bottom: 15px;
+		color: #6a3433;
+		font-size: 14px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.writer strong {
+		margin-right: 3px;
+	}
+
+	.writer b {
+		margin-right: -3px;
+	}
+
+	//center  bar
+	&-list .deco {
+		display: none;
+		position: absolute;
+		top: 30px;
+		right: -4px;
+		width: 8px;
+		height: 30px;
+		margin-top: -3px;
+		background: #f5efe3 url("../images/b_after/pattern.jpg") no-repeat;
+
+		@media screen and (min-width: $tablet) {
+			display: block;
+		}
+	}
+
+	&-list.list-right .deco {
+		left: -4px;
+	}
+
+	&-list .deco:before {
+		content: "";
+		display: block;
+		margin: 5px 0;
+		height: 20px;
+		background: #ca8b5d;
+
+		@media screen and (min-width: $tablet) {
+			content: "";
+			display: block;
+			margin: 5px 0;
+			height: 20px;
+			background: #ca8b5d;
+		}
+	}
+
+	//board arrow
+	&-list.list-right &-list-cell:before {
+		display: none;
+		content: "";
+		position: absolute;
+		left: 51px;
+		top: 30px;
+		width: 19px;
+		height: 24px;
+		background: url("../images/b_after/arrow/left.png") no-repeat;
+
+		@media screen and (min-width: $tablet) {
+			display: inline-block;
+		}
+	}
+
+	&-list &-list-cell:after {
+		display: none;
+		content: "";
+		position: absolute;
+		right: 51px;
+		top: 30px;
+		width: 19px;
+		height: 24px;
+		background: url("../images/b_after/arrow/right.png") no-repeat;
+
+		@media screen and (min-width: $tablet) {
+			display: inline-block;
+		}
+	}
+
+	&-list.list-right &-list-cell:after {
+		content: none;
+	}
+
+	@media screen and (min-width: $l-mb) {
+		margin-top: 60px;
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+	@media screen and (min-width: $tablet) {
+		margin-top: 60px;
+		padding: 70px 30px 50px;
+	}
+}
+.board:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	bottom: 0;
+	width: 8px;
+	height: 100%;
+	margin-left: -4px;
+	background: #aba19c;
+}
